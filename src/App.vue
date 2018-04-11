@@ -1,23 +1,20 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <app-header></app-header>
+    <home></home>
   </div>
 </template>
-
 <script>
+import AppHeader from './components/commons/Header/Header'
+import Home from './components/containers/Home/Home' 
 export default {
-  name: 'App'
+  name:'App',
+   components: {
+    Home,AppHeader
+  }
 }
 </script>
+<style lang="sass" scoped>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
+
