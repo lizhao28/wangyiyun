@@ -5,7 +5,7 @@
        
      </i>
       <h2>推荐歌单</h2>
-    <!-- <div class="gd">
+    <div class="gd">
         <li>
             <img src="http://p1.music.126.net/siOi29a_RM84pk8qoMrdAg==/109951163237718433.webp?imageView&thumbnail=246x0&quality=75&tostatic=0&type=webp" alt="">
             <span>342万</span>
@@ -13,7 +13,7 @@
                 华语 | 我没有很想你，只是经常梦见你
             </p>
         </li>
-    </div> -->
+    </div>
    </div>
 
 </template>
