@@ -9,7 +9,7 @@
 <script>
 import  AppTmusic from "./tMusic-hot"
 import NewMusic from "./newMusic"
-// import HotMusic from "../HotMusic/HotMusic"
+import HotMusic from "../HotMusic/HotMusic"
 export default {
   name:'home',
   components: {

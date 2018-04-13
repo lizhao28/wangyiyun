@@ -5,15 +5,17 @@
       <h2>最新音乐</h2>
    </span>
     <div class="new-list">
-        <div class="new-li" v-for="film in films" :key="film.cur_count">
-           <div class="lleft">
-                <h3>{{film.data.albumname}}</h3>
-                <p  v-for="singers in film.data.singer" :key="singers.id">{{singers.name}}</p>
-           </div>
-           <div class="rright">
-               <span class="fa fa-music"></span>
-           </div>
-        </div>
+        <!-- <router-linker> -->
+                <div class="new-li" v-for="film in films" :key="film.id">
+                <div class="lleft">
+                        <h3>{{film.name}}</h3>
+                        <p v-for="singer in film.song.artists" :key="singer.id">{{singer.name}}</p>
+                </div>
+                <div class="rright">
+                    <span class="fa fa-music"></span>
+                </div>
+                </div>
+         <!-- </router-linker> -->
     </div>
   </div>
 </template>
@@ -29,13 +31,13 @@ export default {
  methods:{
      //https://c.y.qq.com
      getnews(){
-         this.$http.get('/mz/v8/fcg-bin/fcg_v8_toplist_cp.fcg?g_tk=5381&uin=0&format=json&inCharset=utf-8&outCharset=utf-8&notice=0&platform=h5&needNewCode=1&tpl=3&page=detail&type=top&topid=27&_=1523534860555',{
-             params:{
-                 __t:Date.now()
-             }
+         this.$http.get('../../../../static/json/ms.json',{
+            //  params:{
+            //      __t:Date.now()
+            //  }
          }).then(res =>{
              console.log(res);
-             this.films = res.data.songlist
+             this.films = res.data.result
          }).catch(err => {
             //  console.log(arguments);
              
