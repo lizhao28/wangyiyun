@@ -1,15 +1,20 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 
 Vue.use(Router)
 
+import Home from '../components/containers/Home/Home.vue'
+ import HotMusic from '../components/containers/HotMusic/HotMusic.vue'
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      path: '', redirect: '/home'
+    },
+    {
+      path: '/home', name: 'home',component:Home
+    },
+    {
+      path: '/HotMhotusic', name: 'HotMhotusic', component: HotMusic
     }
   ]
 })

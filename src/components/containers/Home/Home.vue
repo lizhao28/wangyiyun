@@ -1,16 +1,19 @@
 <template>
 
    <main>
-      <app-tmusic>1</app-tmusic>
+      <app-tmusic></app-tmusic>
+      <new-music></new-music>
    </main>
 
 </template>
 <script>
 import  AppTmusic from "./tMusic-hot"
+import NewMusic from "./newMusic"
+// import HotMusic from "../HotMusic/HotMusic"
 export default {
   name:'home',
   components: {
-    AppTmusic
+    AppTmusic,NewMusic
   }
 }
 </script>

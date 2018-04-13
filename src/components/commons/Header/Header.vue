@@ -19,8 +19,8 @@ export default {
     data(){
         return{
             navs:[
-                {id:'1',title:'推荐音乐',path:'/tMusic'},
-                {id:'2',title:'热歌榜',path:'/HotMusic'},
+                {id:'1',title:'推荐音乐',path:'/home'},
+                {id:'2',title:'热歌榜',path:'/HotMhotusic'},
                 {id:'3',title:'搜索',path:'/ss'}
             ]
         }
@@ -38,9 +38,9 @@ export default {
          height: 64px;
              position: fixed;
           background-color: #242424;
+          z-index: 1000;
          h1{
-             margin-left: 10px;
-             
+             margin-left: 10px;  
            background: url(../../../assets/logo1.png );
            position: relative;
             width: 160px;
@@ -57,6 +57,7 @@ export default {
         left: 0;
         z-index: 100;
         height: 40px;
+        background: #fff;
         border: 1px solid rgba(0,0,0,.1);
         a{
             line-height: 40px;
