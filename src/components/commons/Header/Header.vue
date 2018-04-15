@@ -2,27 +2,46 @@
 
  <header>
       <div class="logo">
-            <h1></h1>
+            <h1>
+                <div @click = " xianshi =!xianshi">
+                    <router-link v-for="geren in gerens" :key="geren.id" :to = "geren.path" class="fa fa-user-circle" ></router-link>
+                </div>
+            </h1>
         </div>
-          <div class="header_li">
-              <router-link v-for = "nav in navs" :key = "nav.id"  :to = "nav.path"><span><p>{{nav.title}}</p></span></router-link>
+          <!-- <div class="header_li" v-if="xianshi">
+              <router-link v-for = "nav in navs" :key = "nav.id"  :to = "nav.path"><span><p>{{nav.title}}</p></span></router-link> 
+            
+          </div> 
+         <div class="header_li" v-else >
+                     <i class="fa fa-arrow-left" @click="xianshi"></i>         
+          </div>   -->
+           <div class="header_li"  v-if="xianshi" >
+               <router-link to = "/home"> <i class="fa fa-arrow-left" @click="xs = !xs"></i></router-link> 
+                          
           </div>  
+            <div class="header_li" v-else v-show="xs">
+              <router-link v-for = "nav in navs" :key = "nav.id"  :to = "nav.path"><span><p>{{nav.title}}</p></span></router-link> 
+            
+          </div> 
+        
+          
  </header>
 </template>
 <script>
-// export default {
-//   name:"AppHeader",
-  
-// }
 export default {
   name:'AppHeader',
     data(){
         return{
+            xianshi :false,
+            xs:true,
             navs:[
                 {id:'1',title:'推荐音乐',path:'/home'},
-                {id:'2',title:'热歌榜',path:'/HotMhotusic'},
+                {id:'2',title:'热歌榜',path:'/hotmusic'},
                 {id:'3',title:'搜索',path:'/ss'}
-            ]
+            ],
+            gerens:[
+                {id:'4',path:'/geren'}
+            ],
         }
     }
 }
@@ -44,6 +63,20 @@ export default {
            position: relative;
             width: 160px;
             height: 100%;
+            a{
+                position: absolute;
+                right: -100%;
+                top: 30%;
+                div{
+                    width: 28px;
+                    height: 28px;
+                    
+                }
+            }
+            a.router-link-active{
+                color: hotpink;
+            }
+           
          }
      }
    }
@@ -71,6 +104,16 @@ export default {
                 padding: 0 5px;
             }
         }
+         i{
+             display: block;
+                height: 40px;
+                width: 40px;
+                font-size: 12px;
+                line-height: 40px;
+                text-align: center;
+                color: #333;
+            }
+
    }
    a.router-link-active {
        span{

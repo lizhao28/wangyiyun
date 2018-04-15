@@ -14,7 +14,8 @@ module.exports = {
     //代理配置
     proxyTable: { 
       '/mz': {//当8080看到请求接口前面是mz的时候
-        target: 'https://c.y.qq.com/',//其实就是让8080去代理到真正的这个域下面去请求
+        // target: 'https://c.y.qq.com/',//其实就是让8080去代理到真正的这个域下面去请求
+        target: 'http://music.163.com/',
         changeOrigin: true,
         pathRewrite: {//让8080去代理请求的时候，把路径中的暗号去去掉
           '^/mz': ''

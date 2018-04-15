@@ -23,6 +23,7 @@
 <script>
 export default {
   name:'HotMusic',
+  // props:[type],
   data(){
     return{
       // num:0,

@@ -6,14 +6,16 @@
    </span>
     <div class="new-list">
         <!-- <router-linker> -->
-                <div class="new-li" v-for="film in films" :key="film.id">
-                <div class="lleft">
-                        <h3>{{film.name}}</h3>
-                        <p v-for="singer in film.song.artists" :key="singer.id">{{singer.name}}</p>
-                </div>
-                <div class="rright">
-                    <span class="fa fa-music"></span>
-                </div>
+                <div class="new-li" v-for="film in films" :key="film.id" >
+                    <router-link tag="div" :to = "{ name: 'bofang', params: {id:film.id } }" class="new-lis">
+                        <div class="lleft">
+                                <h3>{{film.name}}</h3>
+                                <p v-for="singer in film.song.artists" :key="singer.id">{{singer.name}}</p>
+                        </div>
+                        <div class="rright">
+                            <span class="fa fa-music"></span>
+                        </div>
+                    </router-link>
                 </div>
          <!-- </router-linker> -->
     </div>
@@ -32,9 +34,9 @@ export default {
      //https://c.y.qq.com
      getnews(){
          this.$http.get('../../../../static/json/ms.json',{
-            //  params:{
-            //      __t:Date.now()
-            //  }
+             params:{
+                 __t:Date.now()
+             }
          }).then(res =>{
              console.log(res);
              this.films = res.data.result
@@ -42,6 +44,9 @@ export default {
             //  console.log(arguments);
              
          })
+        // this.$http.post('/mz/weapi/personalized/newsong').then(res=>{
+        //     console.log(res);
+        // })
      }
  },
  created(){
@@ -71,7 +76,7 @@ export default {
         display: flex;
         flex-direction:column;
         padding-left: 10px;
-        .new-li{
+        .new-lis{
             display: flex;
             flex: 1 1 auto;
             padding: 6px 0;
