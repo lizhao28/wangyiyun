@@ -23,7 +23,7 @@
               <router-link v-for = "nav in navs" :key = "nav.id"  :to = "nav.path"><span><p>{{nav.title}}</p></span></router-link> 
             
           </div> 
-        
+         
           
  </header>
 </template>
@@ -37,10 +37,10 @@ export default {
             navs:[
                 {id:'1',title:'推荐音乐',path:'/home'},
                 {id:'2',title:'热歌榜',path:'/hotmusic'},
-                {id:'3',title:'搜索',path:'/ss'}
+                {id:'3',title:'搜索',path:'/SearchInput'}
             ],
             gerens:[
-                {id:'4',path:'/geren'}
+                {id:'4',path:'/LoginR'}
             ],
         }
     }
